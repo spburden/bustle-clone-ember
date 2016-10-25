@@ -13,7 +13,7 @@ export default Ember.Component.extend({
         body: this.get('body'),
         image: this.get('image'),
         author: this.get('author'),
-        date: this.get('date')
+        date: moment.now().valueOf()
       };
       this.set('addNewArticle', false);
       this.sendAction('saveArticle2', params);
