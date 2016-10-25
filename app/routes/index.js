@@ -8,13 +8,8 @@ export default Ember.Route.extend({
   actions: {
     saveArticle3(params) {
       var newArticle = this.store.createRecord('article', params);
-      newRental.save();
+      newArticle.save();
       this.transitionTo('index');
-    },
-
-    // destroyArticle (article) {
-    //   article.destroyRecord();
-    //   this.transitionTo('index');
-    // }
     }
+  }
 });

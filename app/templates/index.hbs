@@ -3,23 +3,24 @@
 </div>
 
 <h3>Todays News:</h3>
+<h4>{{moment-format (now) 'MM/DD/YYYY' date}}</h4>
 
 {{#each model as |article|}}
-  <div class="well">
-    <div class="row">
-      <div class="col-sm-6">
-        <img src={{article.image}}>
-      </div>
-      <div class="col-sm-6">
-        <h2>{{article.title}}</h2><br>
-        <h4>{{article.body}}</h4>
-        <br>
-        <br>
-        <p>By <strong>{{article.author}}</strong><span class="date">{{article.date}}</span></p>
+  {{#link-to 'article' article.id}}
+    <div class="well">
+      <div class="row">
+        <div class="col-sm-6">
+          <img src={{article.image}}>
+        </div>
+        <div class="col-sm-6">
+          <h2>{{article.title}}</h2><br>
+          <h4>{{article.body}}</h4>
+          <br>
+          <br>
+          <p>By <strong>{{article.author}}</strong><span class="date">{{article.date}}</span></p>
+        </div>
       </div>
     </div>
-    <!-- <button {{action 'update' article}}>Update Article</button>
-    <button {{action 'delete' article}}>Delete Article</button> -->
-  </div>
+  {{/link-to}}
 {{/each}}
 {{new-article saveArticle2="saveArticle3"}}
